@@ -3,6 +3,9 @@
 Black Scholes equation via deep neural nets
 This code is a simple modification of "Physics
 informed Neural Networks" by Maizar Raissi
+This is an early version code so it might not
+be free of errors/it is not written in production
+level.
 @author: Ricardo
 """
 
