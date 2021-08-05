@@ -5,9 +5,11 @@ Problem: You want to inveset 1,000 dollars on 10 stocks. Suppose you know
 the volatility and return on investment for each of the stock.
 How do you maximize your profit and at
 the same time minimize your risk?
-One way to do this is to use the sharpie ratio.
+One way to do this is to use the sharpe ratio.
 This code is based on the adam-optimizer.
-This is not financial advice, use this code at your own risk.
+This is not financial advice, use this code at your own risk. Note: This
+assumes uncorrelated stocks! The problem becomes harder when there is
+correlation among the underlyings.
 @author: Ricardo
 """
 
@@ -130,7 +132,7 @@ if __name__ == "__main__":
     stock_value[1,0]=0.15
     sigma[1,0]=0.2
     #Set Nx=2
-    #Test with 2 stocks, answer should be Sharpie Ratio=1.25
+    #Test with 2 stocks, answer should be Sharpe Ratio=1.25
     """
     Investment=1000.0
 
@@ -154,7 +156,7 @@ if __name__ == "__main__":
 
     fig = plt.figure()
     plt.scatter(Losss_domain,LLosss, color='black', linewidth=2)
-    plt.title('Loss: More training could give better Sharpie Ratio!',fontsize=14,fontweight='bold')    
+    plt.title('Loss: More training could give better Sharpe Ratio!',fontsize=14,fontweight='bold')    
 
     weights = model.predict()
 
@@ -163,7 +165,7 @@ if __name__ == "__main__":
         print(str.format('{0:.2f}',Investment*sigmoid(weights[I])))
         
         
-    print('The computed sharpie ratio is:')
+    print('The computed sharpe ratio is:')
     nsr=0
     dsr=0
     for I in range(0,Nx):
